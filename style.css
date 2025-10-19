@@ -1,0 +1,237 @@
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Inter", sans-serif;
+}
+
+body {
+  background: #f4f7fa;
+  padding: 40px 20px;
+}
+
+/* ===== Header & Buttons ===== */
+h2 {
+  text-align: center;
+  color: #0d47a1;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.button-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* gap: 10px; */
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+ 
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #444;
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.btn.active {
+  color: #fff;
+}
+
+.slide-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(45deg, #0078ff, #00c6ff);
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+
+/* ===== Hover Effects ===== */
+.btn:hover {
+  color: #1976d2;
+}
+
+/* ===== Active Button Keeps White Text ===== */
+.btn.active:hover {
+  color: #fff;
+}
+
+
+/* ===== Section Containers ===== */
+.form-section {
+  display: none;
+  padding: 40px;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Partner Form (Blue Gradient) ===== */
+#partnerForm {
+  background: #ffffff;
+  border: 2px solid #00b894;
+  color: #333333;
+}
+
+#partnerForm input,
+#partnerForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#partnerForm input::placeholder,
+#partnerForm textarea::placeholder {
+  border: 1.5px solid #fff;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Agent Form (White with Green Border) ===== */
+#agentForm {
+  background: #ffffff;
+  border: 2px solid #00b894;
+  color: #333;
+}
+
+/* ===== Grid Layout ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: start;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Inputs and Labels ===== */
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#partnerForm input:focus,
+#partnerForm textarea:focus {
+   border-color:#0076ca;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 184, 148, 0.15);
+}
+
+#agentForm input:focus,
+#agentForm textarea:focus,
+#agentForm select:focus {
+  border-color:#0076ca;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 184, 148, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  height: 90px;
+}
+
+/* ===== File Inputs ===== */
+input[type="file"] {
+  cursor: pointer;
+}
+
+/* ===== Section Titles (Agent Form) ===== */
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===== Submit Buttons ===== */
+button.submit-btn,
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#partnerForm .submit-btn {
+  background: #002b80;
+}
+
+#partnerForm .submit-btn:hover {
+  background: #001f5a;
+}
+
+#agentForm button[type="submit"] {
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+}
+
+#agentForm button[type="submit"]:hover {
+  background: linear-gradient(90deg, #0d47a1, #64b5f6);
+  box-shadow: 0 6px 15px rgba(25, 118, 210, 0.2);
+}
